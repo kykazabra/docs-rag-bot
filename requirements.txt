@@ -1,7 +1,8 @@
- langchain
- langchain-openai
- langchain-community
- langchain-chroma
- telebot
- pypdf2
- python-docx
+langchain
+langchain-openai
+langchain-community
+langchain-chroma
+pyTelegramBotAPI
+PyPDF2
+python-docx
+python-dotenv
