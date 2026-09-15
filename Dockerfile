@@ -1,11 +1,12 @@
-FROM python:latest
+FROM python:3.12-slim
 
 WORKDIR /app
 
-RUN git clone https://github.com/kykazabra/file_rag_bot.git
+RUN apt-get update && apt-get install -y --no-install-recommends git \
+    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app/file_rag_bot
+RUN git clone https://github.com/kykazabra/docs-rag-bot.git .
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 CMD ["python", "bot.py"]
